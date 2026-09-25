@@ -1,0 +1,625 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --verde: #ad253f;
+    --limon: #a31f36;
+    --degradado: linear-gradient(90deg, var(--limon), var(--verde));
+}
+
+*::selection{
+    color: whitesmoke;
+    background: var(--limon);
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+body{
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    z-index: 1000;
+    position: relative;
+    padding: 2rem 9%;
+    align-items: center;
+    background-color: #a31f36;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.logo{
+    display: flex;
+    z-index: 1000;
+    padding: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo .logo img{
+    width: 100px;
+    display: inline-block;
+}
+
+.navigation ul{
+    list-style: none;
+}
+
+.header .label .menu img{
+    width: 5px;
+    display: flex;
+}
+
+
+.header .navigation ul li{
+    float: left;
+    position: relative;
+}
+
+.header .navigation .acceso ul li img{
+    float: left;
+    position: fixed;
+}
+
+.header .navigation ul li a{
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: all .2s ease;
+    font-size: 150%;
+}
+
+.header .navigation ul li a:hover{
+    background-color: var(--verde);
+}
+
+.header .navigation ul li ul{
+    right: 0;
+    width: 300px;
+    display: none;
+    position: absolute;
+    background-color: var(--verde);
+}
+
+.header .navigation ul li ul li a{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul{
+    top: 0;
+    right: 300px;
+    position: absolute;
+}
+
+.header .navigation ul li ul li{
+    width: 100%;
+}
+
+.header .navigation ul li .acceso img{
+    width: 20px;
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10 10 10 10;
+}
+
+.header .navigation ul li:hover > ul{
+    display: initial;
+}
+
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+    width: 10px;
+}
+
+#toggle,
+.header label img{
+    cursor: pointer;
+    width: 27px;
+    padding: 10 10;
+}
+
+.menu{
+    width: 45px;
+    height: 35px;
+}
+
+.imagen .body img{
+    width: 100%;
+    display: flex;
+}
+
+.imagen2 .footer img{
+    width: 100%;
+    display: flex;
+}
+
+.ingresar{
+    display: flex;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingresar form{
+    width: 50vh;
+    display: flexbox;
+    text-align: center;
+    border-radius: 20px;
+    padding: 100px 100px 100px 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: whitesmoke;
+}
+
+.inputcaja{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.ingresar h2{
+    margin-top: 80;
+    font-size: 20px;
+    text-align: left;
+    color: #a31f36;
+}
+
+.ingresar p{
+    font-size: 18px;
+    color: #a31f36;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    color: whitesmoke;
+    margin-bottom: 0px;
+}
+
+input{
+    outline: none;
+    color: #333;
+    padding: 17px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ededed;
+}
+
+input::placeholder{
+    color: #666;
+}
+
+.inputcaja .form-txt{
+    color: var(--limon);
+    display: flex;
+    text-align: center;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+ 
+.inputcaja .form-txt a{
+    color: var(--limon);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+}
+
+.inputcaja .btn{
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 25px;
+    background: var(--verde);
+}
+
+.inputcaja .btn:hover{
+    background-color: var(--limon);
+}
+
+.desvinculacion{
+    background-image: url(img/fondo-formulario.jpg);
+    background-size: cover;
+}
+
+.desvinculacion .caja-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.desvinculacion .caja-contenedor .caja{
+    margin: 1.5rem;
+    flex: 1 1 30rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: .5rem;
+    transition: .2s linear;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.desvinculacion .caja-contenedor .caja h4{
+    font-size: 1rem;
+    padding-top: 1rem;
+    color: #333;
+}
+
+.desvinculacion .caja-contenedor .caja h3{
+    font-size: 3rem;
+    padding-top: 1rem;
+    color: var(--verde);
+}
+
+.desvinculacion .caja-contenedor .caja b{
+    color: #333;
+    padding: 0;
+    font-size: .8rem;
+    text-align: justify;
+}
+
+.desvinculacion .caja-contenedor .caja i{
+    color: #333;
+    padding: .5rem;
+    font-size: .8rem;
+    text-align: justify;
+}
+
+
+@media (max-width: 1024px) {
+    .header label {
+        display: inline-block;
+    }
+
+    .header {
+        padding: 7px 7%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--limon);
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .navigation ul .cuadros img {
+        display: flex;
+        min-height: 51vh;
+        box-sizing: border-box;
+        object-fit: cover; 
+        margin: 0;
+        padding: 0;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10px;
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: var(--verde);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+
+
+    .imagen .imagenes img {
+        width: 50%;
+        display: flex;
+        margin: auto;
+        padding: 0;
+    }
+
+    form {
+        width: 30%;
+        padding: 30px 30px;
+    }
+
+    .inputcaja .form-txt a {
+        color: #333;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    input {
+        padding: 15px 15px;
+    }
+
+    .desvinculacion .caja-contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desvinculacion .caja-contenedor .caja {
+        margin: 1rem;
+        flex: .5 .5 20rem;
+        text-align: center;
+        padding: 2rem 1rem;
+        background: white;
+        border-radius: 0.5rem;
+        transition: 0.2s linear;
+        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .desvinculacion .caja-contenedor .caja img {
+        height: 5rem;
+    }
+
+    .desvinculacion .caja-contenedor .caja h3 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        color: var(--verde);
+    }
+
+    .desvinculacion .caja-contenedor .caja p {
+        color: #333;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header label {
+        display: inline-block;
+    }
+
+    .header {
+        padding: 7px 7%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--limon);
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10px;
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: var(--verde);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+
+
+    .imagen .imagenes img {
+        width: 50%;
+        display: flex;
+        margin: auto;
+        padding: 0;
+    }
+
+    form {
+        width: 30%;
+        padding: 30px 30px;
+    }
+
+    .inputcaja .form-txt a {
+        color: #333;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    input {
+        padding: 15px 15px;
+    }
+
+    .desvinculacion .caja-contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desvinculacion .caja-contenedor .caja {
+        margin: 1rem;
+        flex: .5 .5 20rem;
+        text-align: center;
+        padding: 2rem 1rem;
+        background: white;
+        border-radius: 0.5rem;
+        transition: 0.2s linear;
+        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .desvinculacion .caja-contenedor .caja img {
+        height: 5rem;
+    }
+
+    .desvinculacion .caja-contenedor .caja h3 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        color: var(--verde);
+    }
+
+    .desvinculacion .caja-contenedor .caja p {
+        color: #333;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 320px) {
+    .header label {
+        display: inline-block;
+    }
+
+    .header {
+        padding: 7px 7%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--limon);
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10px;
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: var(--verde);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+
+
+    .imagen .imagenes img {
+        width: 50%;
+        display: flex;
+        margin: auto;
+        padding: 0;
+    }
+
+   .ingresar .form {
+        width: 30%;
+        margin: auto;
+        height: 3rem;
+        padding: 10px 10px;
+    }
+
+    .inputcaja .form-txt a {
+        color: #333;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    input {
+        padding: 15px 15px;
+    }
+
+    .desvinculacion .caja-contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desvinculacion .caja-contenedor .caja {
+        margin: 1rem;
+        flex: .5 .5 20rem;
+        text-align: center;
+        padding: 2rem 1rem;
+        background: white;
+        border-radius: 0.5rem;
+        transition: 0.2s linear;
+        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .desvinculacion .caja-contenedor .caja img {
+        height: 5rem;
+    }
+
+    .desvinculacion .caja-contenedor .caja h3 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        color: var(--verde);
+    }
+
+    .desvinculacion .caja-contenedor .caja p {
+        color: #333;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+    }
+}

